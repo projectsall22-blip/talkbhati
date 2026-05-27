@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@layer base {
+  * { scroll-behavior: smooth; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+}
+
+@layer components {
+  .glass { @apply bg-white/10 backdrop-blur-md border border-white/20; }
+
+  .card {
+    @apply bg-white dark:bg-gray-800/80 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700/50;
+  }
+
+  .section-title { @apply text-3xl md:text-4xl font-bold text-center mb-3; }
+  .section-subtitle { @apply text-gray-500 dark:text-gray-400 text-center max-w-2xl mx-auto mb-12 text-base leading-relaxed; }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200 text-sm;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #059669; border-radius: 99px; }
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.animate-float { animation: float 5s ease-in-out infinite; }
+.animate-fadeUp { animation: fadeUp 0.6s ease forwards; }
