@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Send, Phone, Mail, MapPin, MessageCircle } from 'lucide-react'
 import toast from 'react-hot-toast'
+import api from '../../utils/api'
 
 export default function ContactQuick() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: 'Notes Request', message: '' })
@@ -12,19 +13,23 @@ export default function ContactQuick() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    // Simulate send (no backend)
-    await new Promise(r => setTimeout(r, 800))
-    toast.success('Message received! We will get back to you soon.')
-    setForm({ name: '', email: '', phone: '', subject: 'Notes Request', message: '' })
-    setLoading(false)
+    try {
+      await api.post('/contact', form)
+      toast.success('Message received! We will get back to you soon.')
+      setForm({ name: '', email: '', phone: '', subject: 'Notes Request', message: '' })
+    } catch {
+      toast.error('Failed to send. Please try WhatsApp.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
-    <section ref={ref} className="py-20 bg-white dark:bg-gray-950">
+    <section ref={ref} className="py-14 sm:py-20 bg-white dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.55 }} className="text-center mb-12">
+          transition={{ duration: 0.55 }} className="text-center mb-10">
           <span className="pill bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 mb-4 inline-flex">
             Get in Touch
           </span>
@@ -39,28 +44,28 @@ export default function ContactQuick() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-10 items-start">
+        <div className="grid lg:grid-cols-5 gap-8 items-start">
 
           {/* Left info */}
           <motion.div initial={{ opacity: 0, x: -24 }} animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.55 }} className="lg:col-span-2 space-y-4">
+            transition={{ duration: 0.55 }} className="lg:col-span-2 space-y-3">
 
             {[
-              { icon: Phone, label: 'Mobile', value: '+91-8267908842', href: 'tel:+918267908842', color: '#059669' },
-              { icon: Mail, label: 'Email', value: 'mazidalikhan9717@gmail.com', href: 'mailto:mazidalikhan9717@gmail.com', color: '#0d9488' },
-              { icon: MapPin, label: 'Address', value: 'C-28, Rafikabad Colony, Dasna, Ghaziabad', href: null, color: '#0891b2' },
+              { icon: Phone,  label: 'Mobile',  value: '+91-8267908842',           href: 'tel:+918267908842',                    color: '#059669' },
+              { icon: Mail,   label: 'Email',   value: 'mazidalikhan9717@gmail.com', href: 'mailto:mazidalikhan9717@gmail.com',   color: '#0d9488' },
+              { icon: MapPin, label: 'Address', value: 'C-28, Rafikabad Colony, Dasna, Ghaziabad', href: null,                   color: '#0891b2' },
             ].map(({ icon: Icon, label, value, href, color }) => (
-              <div key={label} className="flex items-start gap-3 p-4 rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+              <div key={label} className="flex items-start gap-3 p-3.5 rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
                 <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
                   style={{ background: `${color}15` }}>
                   <Icon className="w-4 h-4" style={{ color }} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="text-xs text-gray-400 mb-0.5">{label}</div>
                   {href ? (
                     <a href={href} className="text-sm font-medium text-gray-800 dark:text-gray-200 hover:underline break-all">{value}</a>
                   ) : (
-                    <div className="text-sm font-medium text-gray-800 dark:text-gray-200">{value}</div>
+                    <div className="text-sm font-medium text-gray-800 dark:text-gray-200 break-words">{value}</div>
                   )}
                 </div>
               </div>
@@ -78,7 +83,7 @@ export default function ContactQuick() {
           <motion.form onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 24 }} animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.55, delay: 0.1 }}
-            className="lg:col-span-3 bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-7 shadow-sm space-y-4">
+            className="lg:col-span-3 bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-5 sm:p-7 shadow-sm space-y-4">
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
