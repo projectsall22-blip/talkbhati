@@ -7,16 +7,16 @@ const subjects = ['All', 'Pharmaceutics', 'Pharmacology', 'Pharmaceutical Chemis
   'Pharmacognosy', 'Medicinal Chemistry', 'Hospital Pharmacy', 'Clinical Pharmacy']
 
 const placeholderVideos = [
-  { _id: 'p1', title: 'Pharmacy Lecture – Class 1', subject: 'Pharmaceutics', youtubeId: '6nRiOV9g83w', thumbnail: 'https://img.youtube.com/vi/6nRiOV9g83w/hqdefault.jpg', isLive: false, views: 0, className: '' },
-  { _id: 'p2', title: 'Pharmacy Lecture – Class 2', subject: 'Pharmaceutics', youtubeId: '99QECuI-up0', thumbnail: 'https://img.youtube.com/vi/99QECuI-up0/hqdefault.jpg', isLive: false, views: 0, className: '' },
-  { _id: 'p3', title: 'Pharmacy Lecture – Class 3', subject: 'Pharmaceutics', youtubeId: '4HNc5TEyHJk', thumbnail: 'https://img.youtube.com/vi/4HNc5TEyHJk/hqdefault.jpg', isLive: false, views: 0, className: '' },
-  { _id: 'p4', title: 'Pharmacy Lecture – Class 4', subject: 'Pharmaceutics', youtubeId: 'KVSVBIVswu8', thumbnail: 'https://img.youtube.com/vi/KVSVBIVswu8/hqdefault.jpg', isLive: false, views: 0, className: '' },
-  { _id: 'p5', title: 'Pharmacy Lecture – Class 5', subject: 'Pharmaceutics', youtubeId: '4S4gnhm8bCY', thumbnail: 'https://img.youtube.com/vi/4S4gnhm8bCY/hqdefault.jpg', isLive: false, views: 0, className: '' },
-  { _id: 'p6', title: 'Pharmacy Lecture – Class 6', subject: 'Pharmaceutics', youtubeId: 'Abk5vZaxZho', thumbnail: 'https://img.youtube.com/vi/Abk5vZaxZho/hqdefault.jpg', isLive: false, views: 0, className: '' },
-  { _id: 'p7', title: 'Pharmacy Lecture – Class 7', subject: 'Pharmaceutics', youtubeId: 'HNIOeqaYFrY', thumbnail: 'https://img.youtube.com/vi/HNIOeqaYFrY/hqdefault.jpg', isLive: false, views: 0, className: '' },
-  { _id: 'p8', title: 'Pharmacy Lecture – Class 8', subject: 'Pharmaceutics', youtubeId: 'ptqp1Bp3ArY', thumbnail: 'https://img.youtube.com/vi/ptqp1Bp3ArY/hqdefault.jpg', isLive: false, views: 0, className: '' },
-  { _id: 'p9', title: 'Pharmacy Lecture – Class 9', subject: 'Pharmaceutics', youtubeId: '4t91EeJk6XY', thumbnail: 'https://img.youtube.com/vi/4t91EeJk6XY/hqdefault.jpg', isLive: false, views: 0, className: '' },
-  { _id: 'p10', title: 'Pharmacy Lecture – Class 10', subject: 'Pharmaceutics', youtubeId: 'pNZ9XHSWIJ0', thumbnail: 'https://img.youtube.com/vi/pNZ9XHSWIJ0/hqdefault.jpg', isLive: false, views: 0, className: '' },
+  { _id: 'p1', title: 'Pharmacy Lecture – ', subject: 'Pharmaceutics', youtubeId: '6nRiOV9g83w', thumbnail: 'https://img.youtube.com/vi/6nRiOV9g83w/hqdefault.jpg', isLive: false, views: 0, className: '' },
+  { _id: 'p2', title: 'Pharmacy Lecture – ', subject: 'Pharmaceutics', youtubeId: '99QECuI-up0', thumbnail: 'https://img.youtube.com/vi/99QECuI-up0/hqdefault.jpg', isLive: false, views: 0, className: '' },
+  { _id: 'p3', title: 'Pharmacy Lecture – ', subject: 'Pharmaceutics', youtubeId: '4HNc5TEyHJk', thumbnail: 'https://img.youtube.com/vi/4HNc5TEyHJk/hqdefault.jpg', isLive: false, views: 0, className: '' },
+  { _id: 'p4', title: 'Pharmacy Lecture – ', subject: 'Pharmaceutics', youtubeId: 'KVSVBIVswu8', thumbnail: 'https://img.youtube.com/vi/KVSVBIVswu8/hqdefault.jpg', isLive: false, views: 0, className: '' },
+  { _id: 'p5', title: 'Pharmacy Lecture – ', subject: 'Pharmaceutics', youtubeId: '4S4gnhm8bCY', thumbnail: 'https://img.youtube.com/vi/4S4gnhm8bCY/hqdefault.jpg', isLive: false, views: 0, className: '' },
+  { _id: 'p6', title: 'Pharmacy Lecture – ', subject: 'Pharmaceutics', youtubeId: 'Abk5vZaxZho', thumbnail: 'https://img.youtube.com/vi/Abk5vZaxZho/hqdefault.jpg', isLive: false, views: 0, className: '' },
+  { _id: 'p7', title: 'Pharmacy Lecture – ', subject: 'Pharmaceutics', youtubeId: 'HNIOeqaYFrY', thumbnail: 'https://img.youtube.com/vi/HNIOeqaYFrY/hqdefault.jpg', isLive: false, views: 0, className: '' },
+  { _id: 'p8', title: 'Pharmacy Lecture – ', subject: 'Pharmaceutics', youtubeId: 'ptqp1Bp3ArY', thumbnail: 'https://img.youtube.com/vi/ptqp1Bp3ArY/hqdefault.jpg', isLive: false, views: 0, className: '' },
+  { _id: 'p9', title: 'Pharmacy Lecture – ', subject: 'Pharmaceutics', youtubeId: '4t91EeJk6XY', thumbnail: 'https://img.youtube.com/vi/4t91EeJk6XY/hqdefault.jpg', isLive: false, views: 0, className: '' },
+  { _id: 'p10', title: 'Pharmacy Lecture – ', subject: 'Pharmaceutics', youtubeId: 'pNZ9XHSWIJ0', thumbnail: 'https://img.youtube.com/vi/pNZ9XHSWIJ0/hqdefault.jpg', isLive: false, views: 0, className: '' },
 ]
 
 export default function Videos() {
