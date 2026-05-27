@@ -35,8 +35,8 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-2 group">
             <img src={logo} alt="TalksBhati Pharmacy"
               className="h-9 w-auto group-hover:scale-105 transition-transform drop-shadow-md" />
-            <div className="hidden sm:block">
-              <span className="font-bold text-lg" style={{ background: 'linear-gradient(to right, #059669, #0d9488)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+            <div>
+              <span className="font-bold text-base sm:text-lg" style={{ background: 'linear-gradient(to right, #059669, #0d9488)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 TalksBhati
               </span>
               <span className="text-xs text-gray-500 dark:text-gray-400 block leading-none -mt-0.5">Pharmacy</span>

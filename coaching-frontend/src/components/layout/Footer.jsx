@@ -17,7 +17,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-6">
-              India's trusted online repository for D.Pharma, B.Pharma & M.Pharma semester-wise study notes. Empowering pharmacy students across India.
+              Students trusted online repository for D.Pharma, B.Pharma & M.Pharma semester-wise study notes. Empowering pharmacy students across India.
             </p>
             <div className="flex gap-3">
               {[
@@ -95,8 +95,8 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-500">© 2024 TalksBhati Pharmacy. All rights reserved.</p>
-          <p className="text-sm text-gray-500">Designed with ❤️ for pharmacy students</p>
+          <p className="text-sm text-gray-500">© 2026 TalksBhati Pharmacy. All rights reserved.</p>
+          <p className="text-sm text-gray-500">Designed with ❤️ for pharmacy students By Avatri Tech</p>
         </div>
       </div>
     </footer>
