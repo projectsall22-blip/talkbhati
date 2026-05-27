@@ -36,6 +36,10 @@
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #059669; border-radius: 99px; }
 
+/* Hide scrollbar for filter row */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
 /* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }

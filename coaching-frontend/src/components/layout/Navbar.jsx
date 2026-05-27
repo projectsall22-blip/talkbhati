@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun, Moon, ShieldCheck } from 'lucide-react'
-import { useTheme } from '../../context/ThemeContext'
+import { Menu, X, ShieldCheck } from 'lucide-react'
 import logo from '../../assets/logo.png'
 
 const navLinks = [
@@ -16,7 +15,6 @@ const navLinks = [
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const { dark, toggleTheme } = useTheme()
   const location = useLocation()
 
   useEffect(() => {
@@ -61,10 +59,6 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            <button onClick={toggleTheme}
-              className="p-2 rounded-xl transition-colors bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700">
-              {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </button>
             {/* Admin Login button — desktop */}
             <Link to="/notes-admin/login"
               className="hidden md:flex items-center gap-1.5 text-sm py-2 px-4 rounded-xl font-semibold text-white transition-all hover:scale-105 hover:opacity-90"
