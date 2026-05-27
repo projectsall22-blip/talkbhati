@@ -30,8 +30,16 @@ export default function Videos() {
   useEffect(() => {
     setLoading(true)
     api.get('/videos')
-      .then(res => { if (res.data?.length) setVideos(res.data) })
-      .catch(() => {})
+      .then(res => {
+        // Strictly ensure it's an array before setting state
+        if (Array.isArray(res.data) && res.data.length > 0) {
+          setVideos(res.data)
+        }
+        // else keep placeholderVideos
+      })
+      .catch(() => {
+        // API unavailable — keep placeholderVideos
+      })
       .finally(() => setLoading(false))
   }, [])
 
@@ -48,12 +56,14 @@ export default function Videos() {
     return () => { document.body.style.overflow = '' }
   }, [playing])
 
-  const filtered = videos.filter(v =>
+  const safeVideos = Array.isArray(videos) ? videos : placeholderVideos
+
+  const filtered = safeVideos.filter(v =>
     (subject === 'All' || v.subject === subject) &&
     (!showLive || v.isLive)
   )
 
-  const liveVideos = videos.filter(v => v.isLive)
+  const liveVideos = safeVideos.filter(v => v.isLive)
 
   return (
     <div className="pt-16 min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
